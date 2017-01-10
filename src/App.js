@@ -309,8 +309,8 @@ const Person = (props) => <h4>{props.person.name}</h4>
 
 export default App
 */
-/*
 //video 15
+import React from 'react';
 const HOC = (InnerComponent) => class extends React.Component{
 	constructor(){
 		super();
@@ -361,8 +361,8 @@ class Label extends React.Component {
 const LabelHOC = HOC(Label)
 
 export default App
-*/
 
+/*
 import React, { Component } from 'react';
 
 export class App extends Component {
@@ -371,9 +371,10 @@ export class App extends Component {
 			<div>
 				<header>{this.state.err}</header>
 				<div className="container"></div>
-
 			</div>
 		);
 	}
 }
 
+export default App
+*/
