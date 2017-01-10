@@ -309,6 +309,7 @@ const Person = (props) => <h4>{props.person.name}</h4>
 
 export default App
 */
+/*
 //video 15
 import React from 'react';
 const HOC = (InnerComponent) => class extends React.Component{
@@ -361,7 +362,7 @@ class Label extends React.Component {
 const LabelHOC = HOC(Label)
 
 export default App
-
+*/
 /*
 import React, { Component } from 'react';
 
@@ -378,3 +379,46 @@ export class App extends Component {
 
 export default App
 */
+
+//video 16
+
+import React from 'react';
+import './App.css'
+
+export class App extends React.Component {
+	constructor(){
+		super();
+		this.state = {
+			input: '/* add your jsx here */',
+			output: '',
+			err: ''
+		}
+	}
+	update(e){
+		let code = e.target.value;
+		try{
+			this.setState({
+				output: window.Babel.transform(code, { presets: [ 'es2015', 'react' ]}).code,
+				err:''
+			})
+		}
+		catch(err){
+			this.setState({err: err.message}) 
+		}
+	}
+	render() {
+		return (
+			<div>
+				<header>{this.state.err}</header>
+				<div className="container">
+					<textarea 
+					onChange={this.update.bind(this)}
+					defaultValue={this.state.input} />
+					<pre>{this.state.output}</pre>
+				</div>
+			</div>
+		);
+	}
+}
+
+export default App
