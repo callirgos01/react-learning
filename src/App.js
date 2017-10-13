@@ -381,7 +381,7 @@ export default App
 */
 
 //video 16
-
+/*
 import React from 'react';
 import './App.css'
 
@@ -389,7 +389,7 @@ export class App extends React.Component {
 	constructor(){
 		super();
 		this.state = {
-			input: '/* add your jsx here */',
+			input: '//add your jsx here',
 			output: '',
 			err: ''
 		}
@@ -417,6 +417,32 @@ export class App extends React.Component {
 					<pre>{this.state.output}</pre>
 				</div>
 			</div>
+		);
+	}
+}
+
+export default App
+*/
+
+import React from 'react';
+//import ReactPDF from 'react-pdf';
+//import fileName from './CarlosCallirgos.pdf'
+import './App.css'
+
+export class App extends React.Component {
+	render() {
+		return (
+			<div>
+				<li><a href="resume/">resume</a></li>
+				<li><a href="sabnzbd/">sab</a></li>
+				<li><a href="sickbeard/">tv</a></li>
+				<li><a href="sickbeardkids/">tv kids</a></li>
+				<li><a href="couchpotato/">movies</a></li>
+				<li><a href="headphones/">music</a></li>
+				<li><a href="comics/">comics</a></li>
+				<li><a href="books/">books</a></li>
+			</div>
+			
 		);
 	}
 }
