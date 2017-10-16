@@ -428,23 +428,23 @@ import React from 'react';
 //import ReactPDF from 'react-pdf';
 //import fileName from './CarlosCallirgos.pdf'
 import './App.css'
+import { NavLink, withRouter } from 'react-router-dom';
 
-export class App extends React.Component {
-	render() {
-		return (
-			<div>
-				<li><a href="resume/">resume</a></li>
-				<li><a href="sabnzbd/">sab</a></li>
-				<li><a href="sickbeard/">tv</a></li>
-				<li><a href="sickbeardkids/">tv kids</a></li>
-				<li><a href="couchpotato/">movies</a></li>
-				<li><a href="headphones/">music</a></li>
-				<li><a href="comics/">comics</a></li>
-				<li><a href="books/">books</a></li>
-			</div>
-			
-		);
-	}
-}
 
-export default App
+const App = () => (
+	<div className="container">
+		<div className="main">
+			<NavLink className="main__item" to="">home</NavLink>
+			<NavLink className="main__item" to="resume/">resume</NavLink>
+			<NavLink className="main__item" to="sabnzbd/">sab</NavLink>
+			<NavLink className="main__item" to="sickbeard/">tv</NavLink>
+			<NavLink className="main__item" to="sickbeardkids/">tv kids</NavLink>
+			<NavLink className="main__item" to="couchpotato/">movies</NavLink>
+			<NavLink className="main__item" to="headphones/">music</NavLink>
+			<NavLink className="main__item" to="comics/">comics</NavLink>
+			<NavLink className="main__item" to="books/">books</NavLink>
+		</div>
+	</div>
+);
+
+export default withRouter(App);
