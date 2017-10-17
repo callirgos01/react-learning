@@ -423,28 +423,3 @@ export class App extends React.Component {
 
 export default App
 */
-
-import React from 'react';
-//import ReactPDF from 'react-pdf';
-//import fileName from './CarlosCallirgos.pdf'
-import './App.css'
-import { NavLink, withRouter } from 'react-router-dom';
-
-
-const App = () => (
-	<div className="container">
-		<div className="main">
-			<NavLink className="main__item" to="">home</NavLink>
-			<NavLink className="main__item" to="resume/">resume</NavLink>
-			<NavLink className="main__item" to="sabnzbd/">sab</NavLink>
-			<NavLink className="main__item" to="sickbeard/">tv</NavLink>
-			<NavLink className="main__item" to="sickbeardkids/">tv kids</NavLink>
-			<NavLink className="main__item" to="couchpotato/">movies</NavLink>
-			<NavLink className="main__item" to="headphones/">music</NavLink>
-			<NavLink className="main__item" to="comics/">comics</NavLink>
-			<NavLink className="main__item" to="books/">books</NavLink>
-		</div>
-	</div>
-);
-
-export default withRouter(App);
