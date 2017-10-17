@@ -11,30 +11,32 @@ import Couchpotato from './Couchpotato';
 import Headphones from './Headphones';
 import Comics from './Comics';
 import Books from './Books';
+import { Provider } from 'react-redux';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 import Particles from 'react-particles-js';
 
-const Root = () => (
-    <div>
-        <Particles className="particle"/>
-        <BrowserRouter >
-            <div className="rootComponent">
-                <App/>  
-                <Route exact path='/' component={Home}/>
-                <Route path='/sabnzbd' component={Sabnzbd}/>
-                <Route path='/sickbeard' component={Sickbeard}/>
-                <Route path='/sickbeardkids' component={Sickbeardkids}/>
-                <Route path='/couchpotato' component={Couchpotato}/>
-                <Route path='/headphones' component={Headphones}/>
-                <Route path='/comics' component={Comics}/>
-                <Route path='/books' component={Books}/>
-                <Route path='/login' component={Login}/>
-                <Route path='/signup' component={Signup}/>
-                <Route path='/resume' component={Resume}/>
-            </div>
-        </BrowserRouter>
-    </div>
+const Root = ({store}) =>(
+    <Provider store={store}>
+        <div>
+            <Particles className="particle"/>
+            <BrowserRouter >
+                <div className="rootComponent">
+                    <App/>  
+                    <Route exact path='/' component={Home}/>
+                    <Route path='/sabnzbd' component={Sabnzbd}/>
+                    <Route path='/sickbeard' component={Sickbeard}/>
+                    <Route path='/sickbeardkids' component={Sickbeardkids}/>
+                    <Route path='/couchpotato' component={Couchpotato}/>
+                    <Route path='/headphones' component={Headphones}/>
+                    <Route path='/comics' component={Comics}/>
+                    <Route path='/books' component={Books}/>
+                    <Route path='/login' component={Login}/>
+                    <Route path='/signup' component={Signup}/>
+                    <Route path='/resume' component={Resume}/>
+                </div>
+            </BrowserRouter>
+        </div>
+    </Provider>
 );
-
 export default Root;

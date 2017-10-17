@@ -57,10 +57,19 @@ const menu_items = [{
     image: require('../assets/logo.svg')
 }];
 
+const current_screen = (state = {screen:'/'}, action ) => {
+    switch(action.type) {
+        case 'SET_SCREEN':
+            state = { screen:action.screen };
+            break;
+        default:
+            break;
+    }
+    return state
+};
 
-
-const main_menu = (state=menu_items, action) => {
+const main_menu = ( state = {menu_items}, action) => {
     return state;
 };
 
-export default combineReducers({main_menu});
+export default combineReducers({main_menu,current_screen});
