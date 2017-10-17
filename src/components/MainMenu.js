@@ -1,6 +1,7 @@
 import React from 'react';
 //import MenuItem from './MenuItem';
 import { Menu } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom';
 
 const menu_items = [{
     name:'Home',
@@ -47,21 +48,33 @@ const menu_items = [{
     ext:'/books',
     link:'root',
     image: require('../assets/book/lazylibrarian.png')
+},{
+    name:'Sign Up',
+    ext:'/signup',
+    link:'root',
+    image: require('../assets/logo.svg')
+},{
+    name:'Log In',
+    ext:'/login',
+    link:'root',
+    image: require('../assets/logo.svg')
 }];
 
-const MainMenu = () => (
+const MainMenu = ({history}) => (
     <Menu className="main_menu">
-        {menu_items.map(menu_item =>
-            <Menu.Menu key={menu_item.name}>
+        <Menu.Menu className="main_menu__options">
+            {menu_items.map(menu_item =>
                 <Menu.Item 
+                    onClick={(()=>history.push(menu_item.ext))}
+                    key={menu_item.name}
                     className="menu_item">
                     <img className={`menu_item__image--${menu_item.name}`} src={menu_item.image} alt={menu_item.name} />
                     {menu_item.name}
                 </Menu.Item>
-            </Menu.Menu>
 
-        )}
+            )}
+        </Menu.Menu>
     </Menu>
 );
 
-export default MainMenu;
+export default withRouter(MainMenu);
